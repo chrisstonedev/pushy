@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.0 rc2"
 
     defaultConfig {
-        applicationId "com.closetoeuphoria.kmh"
+        applicationId "com.closetoeuphoria.keepmehonest"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
