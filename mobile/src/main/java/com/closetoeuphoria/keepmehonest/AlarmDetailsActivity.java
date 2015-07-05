@@ -1,9 +1,9 @@
 package com.closetoeuphoria.keepmehonest;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-public class AlarmDetailsActivity extends Activity {
+public class AlarmDetailsActivity extends AppCompatActivity {
 
     private DatabaseHelper dbHelper = new DatabaseHelper(this);
 
@@ -35,8 +35,6 @@ public class AlarmDetailsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        requestWindowFeature(Window.FEATURE_ACTION_BAR);
 
         setContentView(R.layout.activity_details);
 

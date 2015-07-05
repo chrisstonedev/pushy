@@ -1,37 +1,58 @@
 package com.closetoeuphoria.keepmehonest;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
+import android.view.View;
 
-public class AlarmListActivity extends ListActivity {
-
-    private AlarmListAdapter mAdapter;
+public class AlarmListActivity extends AppCompatActivity
+        implements AlarmListItemClickListener.OnItemClickListener {
+    private final static String TAG = "AlarmListActivity";
     private DatabaseHelper dbHelper = new DatabaseHelper(this);
     private Context mContext;
+
+    private AlarmListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mContext = this;
-        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+//        requestWindowFeature(Window.FEATURE_ACTION_BAR);
 
         setContentView(R.layout.activity_alarm_list);
 
-//        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.list);
+//        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));  //new
 //        mRecyclerView.setItemAnimator(new DefaultItemAnimator());  //new
+//
+//        mAdapter = new AlarmListAdapter(this, dbHelper.getAlarms());
+//        setListAdapter(mAdapter);
 
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        mRecyclerView.addOnItemTouchListener(new AlarmListItemClickListener(this, this));
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
         mAdapter = new AlarmListAdapter(this, dbHelper.getAlarms());
-        setListAdapter(mAdapter);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
@@ -101,5 +122,18 @@ public class AlarmListActivity extends ListActivity {
                         AlarmManagerHelper.setAlarms(mContext);
                     }
                 }).show();
+    }
+
+
+    @Override
+    public void onItemClick(View childView, int position) {
+        Log.d(TAG, childView.toString() + " , " + position);
+        startAlarmDetailsActivity(mAdapter.getItemId(position));
+    }
+
+    @Override
+    public void onItemLongPress(View childView, int position) {
+        Log.d(TAG, childView.toString() + " , " + position);
+        deleteAlarm(mAdapter.getItemId(position));
     }
 }
