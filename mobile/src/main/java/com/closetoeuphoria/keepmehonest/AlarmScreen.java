@@ -1,6 +1,5 @@
 package com.closetoeuphoria.keepmehonest;
 
-import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -9,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AlarmScreen extends Activity {
+public class AlarmScreen extends AppCompatActivity {
 
     public final String TAG = this.getClass().getSimpleName();
 
