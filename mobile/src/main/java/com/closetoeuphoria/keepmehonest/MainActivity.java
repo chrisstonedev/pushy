@@ -31,12 +31,16 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-            Intent intent = new Intent(this, AlarmListActivity.class);
-            startActivity(intent);
-
-            return true;
+        Intent intent;
+        switch (id) {
+            case R.id.create_alarm:
+                intent = new Intent(this, AlarmListActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.view_notifications:
+                intent = new Intent(this, ViewNotifications.class);
+                startActivity(intent);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

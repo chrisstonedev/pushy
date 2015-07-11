@@ -30,61 +30,9 @@ public class AlarmListAdapter extends RecyclerView.Adapter<AlarmListAdapter.Alar
         //TODO: This crashes when real data exists.
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.alarm_list_item, parent, false);
-        // set the view's size, margins, paddings and layout parameters
+        // set the view's size, margins, padding and layout parameters
         return new AlarmViewHolder(view);
     }
-
-//        if (view == null) {
-//            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            view = inflater.inflate(R.layout.alarm_list_item, parent, false);
-//        }
-//
-//        AlarmModel model = (AlarmModel) getItem(position);
-//
-//        TextView txtTime = (TextView) view.findViewById(R.id.alarm_item_time);
-//        txtTime.setText(String.format("%02d : %02d", model.timeHour, model.timeMinute));
-//
-//        TextView txtName = (TextView) view.findViewById(R.id.alarm_item_name);
-//        txtName.setText(model.name);
-//
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_sunday), model.getRepeatingDay(AlarmModel.SUNDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_monday), model.getRepeatingDay(AlarmModel.MONDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_tuesday), model.getRepeatingDay(AlarmModel.TUESDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_wednesday), model.getRepeatingDay(AlarmModel.WEDNESDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_thursday), model.getRepeatingDay(AlarmModel.THURSDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_friday), model.getRepeatingDay(AlarmModel.FRIDAY));
-//        updateTextColor((TextView) view.findViewById(R.id.alarm_item_saturday), model.getRepeatingDay(AlarmModel.SATURDAY));
-//
-//        ToggleButton btnToggle = (ToggleButton) view.findViewById(R.id.alarm_item_toggle);
-//        btnToggle.setChecked(model.isEnabled);
-//        btnToggle.setTag(model.id);
-//        btnToggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-//
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                ((AlarmListActivity) mContext).setAlarmEnabled((Long) buttonView.getTag(), isChecked);
-//            }
-//        });
-//
-//        view.setTag(model.id);
-//        view.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                ((AlarmListActivity) mContext).startAlarmDetailsActivity((Long) view.getTag());
-//            }
-//        });
-//
-//        view.setOnLongClickListener(new OnLongClickListener() {
-//
-//            @Override
-//            public boolean onLongClick(View view) {
-//                ((AlarmListActivity) mContext).deleteAlarm((Long) view.getTag());
-//                return true;
-//            }
-//        });
-//
-//        return view;
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
@@ -95,25 +43,22 @@ public class AlarmListAdapter extends RecyclerView.Adapter<AlarmListAdapter.Alar
         AlarmModel model = (AlarmModel) getItem(position);
         holder.vTime.setText(String.format("%02d : %02d", model.timeHour, model.timeMinute));
         holder.vName.setText(model.name);
-        updateTextColor(holder.vSunday, model.getRepeatingDay(AlarmModel.SUNDAY));
-        updateTextColor(holder.vMonday, model.getRepeatingDay(AlarmModel.MONDAY));
-        updateTextColor(holder.vTuesday, model.getRepeatingDay(AlarmModel.TUESDAY));
+        updateTextColor(holder.vSunday,    model.getRepeatingDay(AlarmModel.SUNDAY));
+        updateTextColor(holder.vMonday,    model.getRepeatingDay(AlarmModel.MONDAY));
+        updateTextColor(holder.vTuesday,   model.getRepeatingDay(AlarmModel.TUESDAY));
         updateTextColor(holder.vWednesday, model.getRepeatingDay(AlarmModel.WEDNESDAY));
-        updateTextColor(holder.vThursday, model.getRepeatingDay(AlarmModel.THURSDAY));
-        updateTextColor(holder.vFriday, model.getRepeatingDay(AlarmModel.FRIDAY));
-        updateTextColor(holder.vSaturday, model.getRepeatingDay(AlarmModel.SATURDAY));
+        updateTextColor(holder.vThursday,  model.getRepeatingDay(AlarmModel.THURSDAY));
+        updateTextColor(holder.vFriday,    model.getRepeatingDay(AlarmModel.FRIDAY));
+        updateTextColor(holder.vSaturday,  model.getRepeatingDay(AlarmModel.SATURDAY));
         holder.vToggle.setChecked(model.isEnabled);
         holder.vToggle.setTag(model.id);
         holder.vToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ((AlarmListActivity) mContext).setAlarmEnabled((Long) buttonView.getTag(), isChecked);
             }
         });
-
 //        holder.setTag(model.id);
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)
