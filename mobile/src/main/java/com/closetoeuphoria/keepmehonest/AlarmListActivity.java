@@ -19,6 +19,7 @@ public class AlarmListActivity extends AppCompatActivity
     private final static String TAG = "AlarmListActivity";
     private DatabaseHelper dbHelper = new DatabaseHelper(this);
     private Context mContext;
+//    private  mLayoutManager;
 
     private AlarmListAdapter mAdapter;
 
@@ -47,8 +48,8 @@ public class AlarmListActivity extends AppCompatActivity
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+//        final RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // specify an adapter (see also next example)
         mAdapter = new AlarmListAdapter(this, dbHelper.getAlarms());

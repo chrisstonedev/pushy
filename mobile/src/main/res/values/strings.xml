@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Keep Me Honest</string>
+    <string name="app_name">Pushy</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -33,4 +33,6 @@
     <string name="save_alarm">Save Alarm</string>
 
     <string name="alarm_question">A typical alarm question goes here.</string>
+    <string name="create_alarm">Create alarm</string>
+    <string name="view_notifications">View notifications</string>
 </resources>
