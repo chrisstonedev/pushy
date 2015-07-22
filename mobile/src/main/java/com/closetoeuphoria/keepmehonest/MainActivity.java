@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, AlarmListActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.view_notifications:
-                intent = new Intent(this, ViewNotifications.class);
-                startActivity(intent);
-                return true;
+//            case R.id.view_notifications:
+//                intent = new Intent(this, ViewNotifications.class);
+//                startActivity(intent);
+//                return true;
         }
 
         return super.onOptionsItemSelected(item);
