@@ -3,6 +3,9 @@
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
         <item name="android:windowBackground">@color/primary200</item>
         <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorAccent">@color/secondary</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary700</item>
     </style>
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
