@@ -35,4 +35,6 @@
     <string name="alarm_question">A typical alarm question goes here.</string>
     <string name="create_alarm">Create alarm</string>
     <string name="view_notifications">View notifications</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="answer">Answer</string>
 </resources>
