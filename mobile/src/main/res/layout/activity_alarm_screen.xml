@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/alarm_screen_title"
@@ -11,17 +11,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:text="@string/alarm_text"
-        android:textSize="38dp" />
+        android:textSize="38sp" />
 
     <TextView
         android:id="@+id/alarm_screen_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/alarm_screen_button"
         android:layout_below="@+id/alarm_screen_title"
+        android:layout_alignLeft="@+id/alarm_screen_button"
         android:layout_marginTop="28dp"
         android:text="@string/zero_time"
-        android:textSize="52dp" />
+        android:textSize="52sp" />
 
     <TextView
         android:id="@+id/alarm_screen_name"
@@ -47,7 +47,9 @@
         android:layout_above="@+id/alarm_screen_button"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="@string/answer"
+        android:inputType="text">
 
         <requestFocus />
     </EditText>
@@ -59,7 +61,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="106dp"
-        android:text="Dismiss"
-        android:textSize="38dp" />
+        android:text="@string/dismiss"
+        android:textSize="38sp" />
 
 </RelativeLayout>

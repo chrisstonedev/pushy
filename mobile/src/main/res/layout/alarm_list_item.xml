@@ -1,123 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<LinearLayout-->
-    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:padding="16dp">-->
-    <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/recycler_view"
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/alarm_item_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:text="@string/zero_time"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-            <TextView
-                android:id="@+id/alarm_item_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/alarm_item_time"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_toLeftOf="@+id/alarm_item_toggle"
-                android:layout_toStartOf="@+id/alarm_item_toggle"
-                android:layout_toRightOf="@+id/alarm_item_time"
-                android:layout_toEndOf="@+id/alarm_item_time"
-                android:text="@string/medium_text"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            <TextView
-                android:id="@+id/alarm_item_sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/alarm_item_time"
-                android:text="@string/letter_sun"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_monday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_sunday"
-                android:layout_toEndOf="@+id/alarm_item_sunday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_mon"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_monday"
-                android:layout_toEndOf="@+id/alarm_item_monday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_tue"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_tuesday"
-                android:layout_toEndOf="@+id/alarm_item_tuesday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_wed"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_wednesday"
-                android:layout_toEndOf="@+id/alarm_item_wednesday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_thu"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_friday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_thursday"
-                android:layout_toEndOf="@+id/alarm_item_thursday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_fri"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <TextView
-                android:id="@+id/alarm_item_saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/alarm_item_friday"
-                android:layout_toEndOf="@+id/alarm_item_friday"
-                android:layout_below="@+id/alarm_item_time"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
-                android:text="@string/letter_sat"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-            <ToggleButton
-                android:id="@+id/alarm_item_toggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:text="@string/toggle_button" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-<!--</LinearLayout>-->
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/alarm_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/zero_time"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/alarm_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/alarm_item_time"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@+id/alarm_item_toggle"
+            android:layout_toLeftOf="@+id/alarm_item_toggle"
+            android:layout_toEndOf="@+id/alarm_item_time"
+            android:layout_toRightOf="@+id/alarm_item_time"
+            android:text="@string/medium_text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/alarm_item_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/letter_sun"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_sunday"
+            android:layout_toRightOf="@+id/alarm_item_sunday"
+            android:text="@string/letter_mon"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_monday"
+            android:layout_toRightOf="@+id/alarm_item_monday"
+            android:text="@string/letter_tue"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_tuesday"
+            android:layout_toRightOf="@+id/alarm_item_tuesday"
+            android:text="@string/letter_wed"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_wednesday"
+            android:layout_toRightOf="@+id/alarm_item_wednesday"
+            android:text="@string/letter_thu"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_thursday"
+            android:layout_toRightOf="@+id/alarm_item_thursday"
+            android:text="@string/letter_fri"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/alarm_item_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_item_time"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/alarm_item_friday"
+            android:layout_toRightOf="@+id/alarm_item_friday"
+            android:text="@string/letter_sat"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <ToggleButton
+            android:id="@+id/alarm_item_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/toggle_button" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
